@@ -1,7 +1,7 @@
 $dark: #22252c;
 $purple: #3F3250;
 $red: #E14658;
-$grey: #c0b3A0;
+$grey: #d8d6d6;
 
 
 *{
@@ -17,9 +17,11 @@ nav {
     min-height: 8vh;
     background-color: $dark;
     font-family: 'Montserrat', sans-serif;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 0 ;
+    z-index: 1;
+    
 }
 
 .logo {
@@ -34,7 +36,7 @@ nav {
     justify-content: space-around;
     width: 35%;
 
-    
+
 }
 
 .nav-links li {
@@ -64,7 +66,6 @@ nav {
     background-color: $red;
     margin: 5px;
     transition: all 0.3s ease;
-    
 }
 
 @media screen and (max-width:1200px){
@@ -88,16 +89,13 @@ nav {
         align-items: center;
         width: 50%;
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        
-        
+        transition: transform 0.5s ease-in;        
     }
     .nav-links li {
         opacity: 0;
     }
     .burger {
-        display: block;
-        
+        display: block;    
     }
 }
 
@@ -126,16 +124,39 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+.nav-links a {
+    -webkit-transition-duration: 0.5; /* Safari */
+    transition-duration: 0.5s;
+  }
+  
+.nav-links a:hover {
+    padding: 10px;
+    background-color: $red; 
+    color: $dark;
+  }
+
 .main {
     background-image: url('/img/main.jpg');
     background-size: cover;
+    position: relative;
     background-position: center;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
     height: 92vh;
-}
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+        opacity: .6;
+        
+      }
+    }
+
 
 .test {
-    background-color: $grey;
+    background-color: #d8d6d6;
     height: 100vh;
 }
