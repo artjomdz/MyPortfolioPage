@@ -19,7 +19,7 @@ nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0 ;   
-    z-index: 100;
+    z-index: 2;
 }
 
 .logo {
@@ -118,7 +118,7 @@ nav {
 }
 
 .nav-links a {
-    -webkit-transition-duration: 0.5; /* Safari */
+    -webkit-transition-duration: 0.5;
     transition-duration: 0.5s;
   }
   
@@ -173,6 +173,7 @@ nav {
         } 
         .myName {
             color: $purple;
+           
         }
     }
 }
@@ -186,6 +187,10 @@ nav {
     h1 {
         font-size: 2.5em;
     }
+    
+   }
+   .myName {
+    color:rgb(119, 98, 149) !important;
 }
 }
 
@@ -252,13 +257,161 @@ nav {
 }
 
 .about {
-    height: 100vh;
+    height: 60em;
     background-color: $dark;
+    .about-heading {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        text-align: center;
+        padding: 3em 0 1em 0;
+        text-transform: uppercase;
+        color: white;
+    }
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 100px 0; 
+        .about-photo {
+            height: 300px;  
+            width: 300px;
+            background-image: url("/img/myself.jpg");
+            border-radius: 100%;
+            background-size: cover;
+            background-position: center;
+            border: 10px solid white;
+        }
+        .about-message {
+            -webkit-clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 15% 75%, 2% 61%, 15% 60%);
+            clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 15% 75%, 2% 61%, 15% 60%);
+            background-color: white;
+            height: 80%;
+            width: 50%;
+            .aboutMe {
+                padding: 2em 3em 2em 8em;
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+    }
 }
 
-.contact {
-    height: 100vh;
+@media screen and (max-width: 1200px){
+    .about-photo {
+        margin-left: 2em;
+        height: 200px !important;
+        width: 200px !important;
+    }
+    .aboutMe {
+        padding: 2em 3em 2em 6em !important;
+    }
+
+}
+
+@media screen and (max-width:768px){
+   .about {
+      height: 75em;
+        .about-container {
+            flex-direction: column;
+            .about-message {
+                margin-top: 5em;
+                transform: rotate(90deg);
+                width: 600px;
+                height: 400px;
+                .aboutMe {
+                    text-align: center;
+                    padding: 0 9.5em 0em 3em !important;
+                    transform: rotate(-90deg);
+                }
+            }
+    }
+ }
+}
+
+.contact {  
     background-color: white;
+    .contact-heading {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        text-align: center;
+        margin: 4em 0 2em 0;
+        text-transform: uppercase;
+        color: $dark;
+    }
+    form { max-width:420px; margin:50px auto; }
+        .feedback-input {
+        color: $dark;
+        font-family: 'Roboto', sans-serif;
+        font-weight:500;
+        font-size: 18px;
+        border-radius: 5px;
+        line-height: 22px;
+        background-color: transparent;
+        border:2px solid $red;
+        transition: all 0.3s;
+        padding: 13px;
+        margin-bottom: 15px;
+        width:100%;
+        box-sizing: border-box;
+        outline:0;
+        }
+
+        .feedback-input:focus { border:2px solid $red; }
+
+        textarea {
+        height: 150px;
+        line-height: 150%;
+        resize:vertical;
+        }
+
+        [type="submit"] {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        background: $red;
+        border-radius:5px;
+        border:0;
+        cursor:pointer;
+        color:white;
+        font-size:24px;
+        padding-top:10px;
+        padding-bottom:10px;
+        transition: all 0.3s;
+        margin-top:-4px;
+        font-weight:700;
+        }
+        [type="submit"]:hover { background: $dark; color: $red }
+        .social-logos {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 10em;
+            img {
+                height: 200px;
+                width: 200px;
+                margin: 0 4em;
+                filter: $dark; 
+                -webkit-filter: grayscale(1); 
+                -webkit-transition: all .8s ease-in-out; 
+                transition: all .8s ease-in-out;
+            }
+            img:hover {
+                filter: none;
+                  -webkit-filter: grayscale(0);
+                  -webkit-transform: scale(1.01);
+                  transform: scale(1.01);
+                }
+        }
+    }
+
+@media screen and (max-width:768px) {
+    .social-logos {
+        img {
+            height: 120px !important;
+            width: 120px !important;
+            margin: 0 0.4em !important;
+        }
+    }
 }
 
 footer {
