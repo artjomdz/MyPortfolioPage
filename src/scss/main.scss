@@ -3,7 +3,6 @@ $purple: #3F3250;
 $red: #E14658;
 $grey: #d8d6d6;
 
-
 *{
     margin: 0px;
     padding: 0px;
@@ -19,9 +18,8 @@ nav {
     font-family: 'Montserrat', sans-serif;
     position: -webkit-sticky;
     position: sticky;
-    top: 0 ;
-    z-index: 1;
-    
+    top: 0 ;   
+    z-index: 100;
 }
 
 .logo {
@@ -35,14 +33,10 @@ nav {
     display: flex;
     justify-content: space-around;
     width: 35%;
-
-
 }
 
 .nav-links li {
-    list-style: none;
-    
-
+    list-style: none;  
 }
 
 .nav-links a{
@@ -57,7 +51,6 @@ nav {
 .burger {
     display: none;
     cursor: pointer;
-    
 }
 
 .burger div {
@@ -142,21 +135,133 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     height: 92vh;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-        opacity: .6;
-        
-      }
+  
+}
+.main-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba($color: $dark, $alpha: 0.6);
+    display: flex;
+}
+
+.header-text {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 6em;
+    .hello{
+        text-align: center;
+        color: $red;
+        font-size: 4.5em;
+        font-family: 'Roboto', sans-serif;
     }
+    h1 {
+        color: white;
+        font-size: 3.5em;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        .developer {
+            color: $red;
+            text-decoration: underline;
+        } 
+        .myName {
+            color: $purple;
+        }
+    }
+}
 
+@media screen and (max-width: 768px){
+   .header-text{ 
+       line-height: 4em;
+    .hello {
+        font-size: 3.5em;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+}
+}
 
-.test {
-    background-color: #d8d6d6;
+.portfolio {
+    background: white;
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        text-align: center;
+        margin: 4em 0 2em 0;
+        text-transform: uppercase;
+        color: $dark;
+    }
+    .portfolio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 7em;
+        
+        .portfolio-row1 {
+            display: flex;
+            overflow: hidden;
+            .row1 {
+                transition: all 0.5s ease;
+                margin: 2em;
+                border: 2px solid white;
+                border-radius: 1.5%;
+                box-shadow: 0px 4px 98px 9px rgba(77,75,75,0.32);
+                -webkit-box-shadow: 0px 4px 98px 9px rgba(77,75,75,0.32);
+                -moz-box-shadow: 0px 4px 98px 9px rgba(77,75,75,0.32);
+            }
+            .row1:hover {
+                transform: scale(1.2);
+            }
+        }
+        .portfolio-row2 {
+            display: flex;
+            .row2 {
+                margin: 2em;
+                transition: all 0.5s ease;
+                border: 2px solid white;
+                border-radius: 1.5%;
+                box-shadow: 0px 4px 98px 9px rgba(77,75,75,0.32);
+                -webkit-box-shadow: 0px 4px 98px 9px rgba(77,75,75,0.32);
+                -moz-box-shadow: 0px 4px 98px 9px rgba(77,75,75,0.32);
+            }
+            .row2:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .portfolio-container{
+        align-items: center;
+        .portfolio-row1{
+            flex-direction: column;
+        }
+        .portfolio-row2{
+            flex-direction: column;
+        }
+    }
+}
+
+.about {
     height: 100vh;
+    background-color: $dark;
+}
+
+.contact {
+    height: 100vh;
+    background-color: white;
+}
+
+footer {
+    background-color: $dark;
+    height: 4vh;
 }
