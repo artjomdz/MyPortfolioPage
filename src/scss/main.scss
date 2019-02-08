@@ -3,6 +3,10 @@ $purple: #3F3250;
 $red: #E14658;
 $grey: #d8d6d6;
 
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -20,6 +24,7 @@ nav {
     position: sticky;
     top: 0 ;   
     z-index: 2;
+    border-bottom: 3px solid $red;
 }
 
 .logo {
@@ -189,9 +194,9 @@ nav {
     }
     
    }
-   .myName {
-    color:rgb(119, 98, 149) !important;
-}
+//    .myName {
+//     color:rgb(119, 98, 149) !important;
+// }
 }
 
 .portfolio {
@@ -228,6 +233,7 @@ nav {
         }
         .portfolio-row2 {
             display: flex;
+            overflow: hidden;
             .row2 {
                 margin: 2em;
                 transition: all 0.5s ease;
@@ -387,8 +393,8 @@ nav {
             justify-content: center;
             margin: 10em;
             img {
-                height: 200px;
-                width: 200px;
+                height: 150px;
+                width: 150px;
                 margin: 0 4em;
                 filter: $dark; 
                 -webkit-filter: grayscale(1); 
@@ -417,4 +423,12 @@ nav {
 footer {
     background-color: $dark;
     height: 4vh;
+}
+
+.copyrights {
+    color: $red;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    line-height: 4vh;
 }

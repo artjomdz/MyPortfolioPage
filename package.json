@@ -18,5 +18,8 @@
     "gulp-notifier": "^1.0.6",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4"
+  },
+  "dependencies": {
+    "jump.js": "^1.0.2"
   }
 }
